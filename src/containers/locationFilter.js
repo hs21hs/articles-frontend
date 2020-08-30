@@ -10,7 +10,7 @@ class LocationFilter extends Component {
   render(){
     return (
      
-        <div class="location-filter">
+        <div className="location-filter">
           Location filter
           <select onChange={(e) => {this.props.applyFilter(e.target.value)}}>
             <option>All</option>

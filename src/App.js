@@ -89,7 +89,7 @@ class App extends Component {
   render(){ 
     return (
       <div className="App">
-        <div class="header">Articles</div>
+        <div className="header">Articles</div>
         <LocationFilter towns={this.state.uniqueLocations} applyFilter={this.applyFilter}/>
         <Articles data={this.state.dataToPresent} newLike={this.newLike} locationFilter={this.state.locationFilter}/>
       </div>
