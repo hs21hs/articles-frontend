@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import './App.css';
 import Articles from './containers/articles';
 import LocationFilter from './containers/locationFilter'
+import serverURL from './extra/serverURL'
 
 class App extends Component {
   state = {
     data: [],
     dataToPresent: [],
     uniqueLocations: [],
-    locationFilter: 'All'
+    locationFilter: 'All',
+    PORT: 3000
   }
 
   componentDidMount(){
@@ -28,7 +30,7 @@ class App extends Component {
   }
 
   retrieveDataFromRails = () => {
-    fetch("http://localhost:3000/articles")
+    fetch(serverURL + "/articles")
     .then((resp) => resp.json())
     .then((body) => {
       console.log('articles',body)
@@ -58,7 +60,7 @@ class App extends Component {
 
   newLike = (id, likes) => {
     console.log('sending like for', id)
-    fetch("http://localhost:3000/articles/newLike",
+    fetch(serverURL + "/articles/newLike",
      {
       method: "POST",
       headers: {
