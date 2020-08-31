@@ -16,7 +16,6 @@ class Articles extends Component {
         <div className="articles-container">
           {this.renderArticles()}
         </div>
-
     );
   }
   

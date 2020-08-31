@@ -69,7 +69,6 @@ class App extends Component {
     })
     .then((resp) => resp.json())
     .then((body) => {
-      console.log('ye',body)
       this.addSingleRailsLikeToData(body.article)
     })
   }
